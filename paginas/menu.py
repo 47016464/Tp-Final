@@ -24,7 +24,6 @@ def btn(pantalla:pygame.Surface, posicion:list, texturaBtn:str, callback)-> None
         mouse_buttons = pygame.mouse.get_pressed()
         
         if mouse_buttons[0]:
-            print("AAAAAAAAA")
             callback()
         
 

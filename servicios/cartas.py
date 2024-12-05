@@ -8,6 +8,9 @@ mazo_bot = []
 bot_movimientos = [
 ]
 
+puntos_bot = 0
+puntos_user = 0
+
 cartas_truco = [
     {"carta": "1 de espada", "valor": 14, "src": "recursos/cartas/1 de espada.jpg"},
     {"carta": "1 de basto", "valor": 13, "src": "recursos/cartas/1 de basto.jpg"},
@@ -64,14 +67,14 @@ cartas_truco = [
 
 #Tantos
 
-def envido(el_usuario_envio:bool=True):
-    evento_enviador(el_usuario_envio, {"event":"envido"})
+# def envido(el_usuario_envio:bool=True):
+#     evento_enviador(el_usuario_envio, {"event":"envido"})
 
-def real_envido(el_usuario_envio:bool=True):
-    evento_enviador(el_usuario_envio, {"event":"real_envido"})
+# def real_envido(el_usuario_envio:bool=True):
+#     evento_enviador(el_usuario_envio, {"event":"real_envido"})
 
-def falta_envido(el_usuario_envio:bool=True):
-    evento_enviador(el_usuario_envio, {"event":"falta_envido"})
+# def falta_envido(el_usuario_envio:bool=True):
+#     evento_enviador(el_usuario_envio, {"event":"falta_envido"})
 
 
 #Truco
@@ -80,12 +83,12 @@ def truco(el_usuario_envio:bool=True):
     evento_enviador(el_usuario_envio, {"event":"truco"})
 
 
-def retruco(el_usuario_envio:bool=True):
-    evento_enviador(el_usuario_envio, {"event":"retruco"})
+# def retruco(el_usuario_envio:bool=True):
+#     evento_enviador(el_usuario_envio, {"event":"retruco"})
 
 
-def vale_cuatro(el_usuario_envio:bool=True):
-    evento_enviador(el_usuario_envio, {"event":"vale_cuatro"})
+# def vale_cuatro(el_usuario_envio:bool=True):
+#     evento_enviador(el_usuario_envio, {"event":"vale_cuatro"})
 
         
 def enviar_carta(carta, el_usuario_envio:bool=True):

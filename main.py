@@ -6,6 +6,9 @@ import paginas.menu as menu
 import paginas.juego as partida
 import paginas.anotador as anotador
 import paginas.opciones as siuu
+import servicios.guardados as puntos
+from servicios.guardados import (guardar_jugador)
+import paginas.rankings as rankings
 
 pygame.init()
 pantalla = pygame.display.set_mode((800,500))
@@ -16,6 +19,7 @@ clock = pygame.time.Clock()
 
 bandera = True
 ruta = "menu"
+nombre = None
 
 def set_ruta(nueva_ruta:str):
     global ruta
@@ -41,7 +45,9 @@ while bandera == True:
                 Musica = True
 
         if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
+
             set_ruta("menu")
+
 
     lista_btn = [
         {
@@ -61,6 +67,11 @@ while bandera == True:
         },
         {
             "posicion":[526, 277],
+            "textura":"ranking",
+            "callback": lambda: set_ruta("rankings")
+        },
+        {
+            "posicion":[526, 323],
             "textura":"salir",
             "callback": lambda: set_ruta("salir")
         },
@@ -68,21 +79,18 @@ while bandera == True:
 
     #Lista de diccionarios, con tuplas
 
-
     if ruta == "menu":
         menu.inicio(pantalla, lista_btn)
     elif ruta == "partida":
         partida.inicio(pantalla)
-        #if pygame.mixer.music.get_busy():
-            #pygame.mixer.music.stop()
     elif ruta == "anotador":
         anotador.inicio(pantalla)
     elif ruta == "opciones":
         siuu.inicio(pantalla)
     elif ruta == "salir":
-        #salir.inicio(pantalla)
         sys.exit()
-
+    elif ruta == "rankings":
+        rankings.inicio(pantalla)
 
     pygame.display.flip()
     clock.tick(60)
